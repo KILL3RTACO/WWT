@@ -1,0 +1,24 @@
+.Table
+  background-color : get($controlBg)
+  border           : $controlBorder
+  border-collapse  : collapse
+  color            : get($fg)
+  font-size        : inherit
+  font-family      : inherit
+
+.TableHeader
+  background: get($controlBgHoverGradient)
+
+.Table.disabled, .Table.disabled .TableRow:hover, .Table.disabled .TableHeader
+  color            : get($fgDisabled)
+  background-color : get($controlBgDisabled)
+
+.TableHeader, .TableRowValue
+  cursor  : default
+  padding : 5px
+
+.TableHeader, .TableRow, .TableRowValue
+  border: $controlBorder
+
+.TableRow:hover
+  background: get($controlBgHoverGradient)

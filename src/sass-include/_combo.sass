@@ -1,0 +1,108 @@
+.Combo .arrow-container
+  width   : 1em
+  display : inline-block
+  float   : right
+
+.Combo .arrow-up-container
+  margin-top: .45em
+
+.Combo .arrow-up-container, .Combo .arrow-down-container
+  display      : inline-block
+  float        : left
+  line-height  : initial
+  width        : 1em
+  margin-left  : .5em
+  height       : .4em
+
+.Combo .arrow-up, .Combo .arrow-down
+  width        : 0
+  height       : 0
+  border-left  : .20em solid transparent
+  border-right : .20em solid transparent
+
+.Combo .arrow-up
+  border-bottom: .20em solid get($fg)
+
+.Combo .arrow-down
+  border-top: .20em solid get($fg)
+
+.Combo.disabled .arrow-up
+  border-bottom: .20em solid get($fgDisabled)
+
+.Combo.disabled .arrow-down
+  border-top: .20em solid get($fgDisabled)
+
+.Combo
+  text-align: left
+
+.ComboItemList
+  position         : absolute
+  list-style-type  : none
+  padding          : 0
+  margin           : 0
+  border           : $controlBorder
+  overflow         : auto
+  border-top       : none
+  background-color : get($controlBg)
+  z-index          : 10000
+
+.ComboItemList.hidden
+  display: none
+
+.ComboItemList:not(.hidden)
+  z-index: 1
+
+.ComboItemList.overlayed
+  border-top         : $controlBorder
+  -webkit-box-shadow : 0px 0px 25px 3px rgba(0,0,0,0.75)
+  -moz-box-shadow    : 0px 0px 25px 3px rgba(0,0,0,0.75)
+  box-shadow         : 0px 0px 25px 3px rgba(0,0,0,0.75)
+
+.ComboItem
+  cursor           : default
+  padding          : 0.175em 5px
+
+.ComboItem.selected
+  display: none
+
+.ComboItem:hover
+  background: get($controlBgHoverGradient)
+
+.ComboEditable .Text
+  margin                      : 0
+  border-top-right-radius     : 0
+  border-bottom-right-radius  : 0
+  width                       : calc(100% - 1em - 3px)
+
+.ComboEditableButtonContainer
+  margin-top    : 0
+  border-radius : get($controlBorderRadius)
+  border-left   : none
+  display       : inline-block
+  float         : right
+  background    : get($controlBgGradient)
+
+.ComboEditableButton
+  border-top-left-radius    : 0
+  border-bottom-left-radius : 0
+  border-left               : none
+  margin-left               : 0
+  height                    : 1.5em
+
+.Combo.listShown, .ComboEditable.listShown .Text
+  border-bottom-left-radius  : 0
+
+.Combo.listShown, .ComboEditable.listShown .ComboEditableButton
+  border-bottom-right-radius : 0
+
+.ComboEditableArrowContainer
+  display     : inline-block
+  margin-top  : .75em
+
+.ComboEditableArrowContainer .down-arrow
+  border-top   : .25em solid get($fg)
+  border-left  : .25em solid transparent
+  border-right : .25em solid transparent
+
+.ComboEditable.disabled .ComboEditableArrowContainer .down-arrow
+  border-top : .25em solid get($fgDisabled)

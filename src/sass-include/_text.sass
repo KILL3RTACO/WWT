@@ -1,0 +1,59 @@
+.Text, .TextArea, .sp-input
+  border           : $controlBorder
+  background-color : get($controlBg)
+  color            : get($fg)
+  font-size        : inherit
+  font-family      : inherit
+  padding          : 3px
+  border-radius    : get($controlBorderRadius)
+  height           : calc(1.5em + 2px)
+
+.Text.disabled, .TextArea.disabled,
+.Spinner.disabled .SpinnerNumber, .Spinner.disabled .SpinnerIncrement, .Spinner.disabled .SpinnerDecrement,
+.ComboEditable.disabled .Text
+  background-color : get($controlBgDisabled)
+  color            : get($fgDisabled)
+
+.Text::placeholder
+  color: get($ph)
+
+//If these placeholder rules are not separated by vendor, they may not work properly
+.Text::-webkit-input-placeholder, .TextArea::-webkit-input-placeholder
+  color: get($ph)
+
+.Text:-moz-placeholder, .TextArea:-moz-placeholder
+  color: get($ph)
+
+.Text::-moz-placeholder, .TextArea::-moz-placeholder
+  color: get($ph)
+
+.Text::-webkit-input-placeholder, .TextArea::-webkit-input-placeholder
+  color: get($ph)
+
+.Text:-ms-input-placeholder, .TextArea:-ms-input-placeholder
+  color: get($ph)
+
+.Text::placeholder, .TextArea::placeholder
+  color: get($ph)
+
+.Text.disabled::-webkit-input-placeholder, .TextArea.disabled::-webkit-input-placeholder
+  color: get($fgDisabled)
+
+.Text.disabled::-moz-placeholder, .TextArea.disabled::-moz-placeholder
+  color: get($fgDisabled)
+
+.Text.disabled:-moz-placeholder, .TextArea.disabled:-moz-placeholder
+  color: get($fgDisabled)
+
+.Text.disabled:-ms-input-placeholder, .TextArea.disabled:-ms-input-placeholder
+  color: get($fgDisabled)
+
+.Text.disabled::placeholder, .TextArea.disabled::placeholder
+  color: get($fgDisabled)
+
+.Text:focus, .TextArea:focus, .sp-input:focus
+  outline          : none
+  background-color : get($controlBgHover)
+
+.TextArea
+  height: initial

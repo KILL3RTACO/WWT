@@ -1,0 +1,61 @@
+#buttons {
+  width: 25%;
+  display: inline-block;
+  float: left;
+}
+#buttons > .Button, #buttons > .ToggleButton, #buttons .ButtonGroup {
+  width: calc(100% - 5px - .5em);
+}
+
+#textboxes {
+  width: 15%;
+  display: inline-block;
+  float: left;
+}
+#textboxes .Text, #textboxes .TextArea {
+  width: calc(100% - 5px - .5em);
+}
+
+#checkRadio {
+  width: 10%;
+  display: inline-block;
+  float: left;
+}
+#checkRadio .RadioContainer, #checkRadio .CheckContainer {
+  width: calc(100% - .5em);
+}
+
+#spinners {
+  width: 5%;
+  display: inline-block;
+  float: left;
+}
+#spinners .Spinner {
+  width: calc(100% - .5em);
+}
+
+#pickers {
+  width: 10%;
+  float: left;
+}
+
+#lists {
+  width: 20%;
+  float: left;
+}
+#lists .List {
+  width: calc(50% - 4px - .25em);
+  margin-right: 0;
+}
+#lists .List:first-child {
+  margin-right: 0.25em;
+}
+#lists .Combo, #lists .ComboEditable, #lists .Table {
+  width: calc(100% - 2px);
+}
+
+#progressEnabled {
+  width: 50em;
+}
+
+/*# sourceMappingURL=demo-wwt.css.map */

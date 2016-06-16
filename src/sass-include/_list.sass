@@ -1,0 +1,24 @@
+.List
+  display          : inline-block
+  padding          : 0
+  margin           : $controlMargin
+  background-color : get($controlBg)
+  border           : $controlBorder
+  overflow-y       : auto
+
+.List.disabled
+  background-color : get($controlBgDisabled)
+  color            : get($fgDisabled)
+
+.List.h-scroll
+  overflow-x: auto
+
+.ListItem
+  cursor  : default
+  padding : 0.175em 0.5em
+
+.ListItem.selected
+  background: get($controlBgHoverGradient)
+
+.List.disabled .ListItem:hover, .List.disabled .ListItem.selected
+  background-color: get($controlBgDisabled)

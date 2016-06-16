@@ -1,0 +1,33 @@
+.ProgressBar
+  height        : 1em
+  border        : $controlBorder
+  display       : inline-block
+
+.ProgressBar, .ProgressBarInner
+  border-radius : get($controlBorderRadius)
+
+.ProgressBarInner
+  height           : 100%
+  background-color : get($controlBgHover)
+  transition       : width 0.3s ease
+
+.ProgressBar:not(.full):not(.indeterminate) .ProgressBarInner
+  border-top-right-radius: 0
+  border-bottom-right-radius: 0
+
+.ProgressBar.indeterminate
+  overflow-x: hidden
+
+  .ProgressBarInner
+    animation: IndeterminateProgress 1.25s linear 0s infinite alternate
+
+//TODO: Alter based on LAF
+@keyframes IndeterminateProgress
+  $w: 20%
+  0%
+    width: $w
+    margin-left: 0
+
+  100%
+    width: $w
+    margin-left: 100% - $w

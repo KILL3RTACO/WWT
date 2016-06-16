@@ -1,0 +1,59 @@
+$spinnerTriangleSize           : .25em
+$spinnerTriangleTrans          : $spinnerTriangleSize solid transparent
+$spinnerTriangleColor          : $spinnerTriangleSize solid get($fg)
+$spinnerTriangleColorDisabled  : $spinnerTriangleSize solid get($fgDisabled)
+
+.SpinnerButtonsContainer
+  background       : get($controlBgGradient)
+  display          : inline-block
+  float            : right
+  width            : 1em
+
+.SpinnerIncrement, .SpinnerDecrement
+  border      : $controlBorder
+  border-left : none
+  display     : inline-block
+  float       : left
+  width       : 1em
+  text-align  : center
+
+.SpinnerIncrement:hover, .SpinnerDecrement:hover
+  background: get($controlBgHoverGradient)
+
+.SpinnerNumber
+  margin                      : 0
+  border-top-right-radius     : 0
+  border-bottom-right-radius  : 0
+  width                       : calc(100% - 1em)
+
+.SpinnerIncrement
+  height: calc(.75em - 1px)
+
+.SpinnerDecrement
+  height     : calc(.75em)
+  border-top : none
+
+.SpinnerUpArrow, .SpinnerDownArrow
+  width       : 0
+  height      : 0
+  margin-top  : 0.25em
+  margin-left : 0.25em
+
+.SpinnerUpArrow
+  border-left   : $spinnerTriangleTrans
+  border-right  : $spinnerTriangleTrans
+  border-bottom : $spinnerTriangleColor
+
+.SpinnerDownArrow
+  border-left  : $spinnerTriangleTrans
+  border-right : $spinnerTriangleTrans
+  border-top   : $spinnerTriangleColor
+
+.Spinner.disabled .SpinnerUpArrow
+  border-bottom: $spinnerTriangleColorDisabled
+
+.Spinner.disabled .SpinnerDownArrow
+  border-top: $spinnerTriangleColorDisabled
+
+.Spinner, .ComboEditable
+  display   : inline-block

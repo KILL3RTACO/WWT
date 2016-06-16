@@ -1,0 +1,535 @@
+@charset "UTF-8";
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS";
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sp-dd {
+  display: none;
+}
+
+.sp-preview {
+  margin: 0;
+}
+
+.sp-replacer {
+  padding: 0;
+}
+
+.no-resize {
+  resize: none;
+}
+
+.resize-v {
+  resize: vertical;
+}
+
+.resize-h {
+  resize: horizontal;
+}
+
+.resize-all {
+  resize: both;
+}
+
+.Button, .ToggleButton,
+.Text, .TextArea, .Spinner,
+.CheckContainer, .RadioContainer,
+.ColorPicker, .FileChooser + label,
+.Combo, .ComboEditable,
+.Table,
+.TabFolder,
+.ProgressBar {
+  margin: 0.25em;
+}
+
+#wwt_tooltip {
+  background-color: rgba(0, 0, 0, 0.65);
+  border: 1px solid;
+  position: absolute;
+  padding: 2px 5px;
+  max-width: 20%;
+  font-size: 10pt;
+  z-index: 10000;
+}
+
+.Button, .ToggleButton, .FileChooser + label, .Combo, .ComboEditableButton {
+  border: 1px solid;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 1.5em;
+  text-align: center;
+  display: inline-block;
+}
+.Button .title, .ToggleButton .title, .FileChooser + label .title, .Combo .title, .ComboEditableButton .title {
+  cursor: default;
+}
+.Button .title.invisible, .ToggleButton .title.invisible, .FileChooser + label .title.invisible, .Combo .title.invisible, .ComboEditableButton .title.invisible {
+  opacity: 0;
+}
+
+.Button:focus, .ToggleButton:focus, .Combo:focus {
+  outline: 0;
+}
+
+.Button.disabled, .Button:hover.disabled,
+.ToggleButton.state-out.disabled, .ToggleButton.state-in.disabled,
+.ToggleButton.state-out.disabled:hover, .ToggleButton.state-in.disabled:hover,
+.Spinner.disabled .SpinnerIncrement, .Spinner.disabled .SpinnerIncrement:hover,
+.Spinner.disabled .SpinnerDecrement, .Spinner.disabled .SpinnerDecrement:hover,
+.FileChooser.disabled + label, .FileChooser.disabled + label:hover,
+.Combo.disabled, .Combo.disabled:hover,
+.ComboEditable.disabled .ComboEditableButton, .ComboEditable.disabled .ComboEditableButton:hover {
+  background: none;
+}
+
+.ButtonGroup {
+  margin: 0.25em;
+  display: inline-block;
+}
+
+.ButtonGroup > .Button, .ButtonGroup > .ToggleButton {
+  margin: 0;
+}
+
+.ButtonGroup > .Button:first-child, .ButtonGroup > .ToggleButton:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ButtonGroup > .Button:last-child, .ButtonGroup > .ToggleButton:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.ButtonGroup > .Button:not(:last-child):not(:first-child), .ButtonGroup > .ToggleButton:not(:last-child):not(:first-child) {
+  border-radius: 0;
+}
+
+.ButtonGroup > .Button:not(:last-child), .ButtonGroup > .ToggleButton:not(:last-child) {
+  border-right: none;
+}
+
+.FileChooser {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.Text, .TextArea, .sp-input {
+  border: 1px solid;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 3px;
+  height: calc(1.5em + 2px);
+}
+
+.Text:focus, .TextArea:focus, .sp-input:focus {
+  outline: none;
+}
+
+.TextArea {
+  height: initial;
+}
+
+.SpinnerButtonsContainer {
+  display: inline-block;
+  float: right;
+  width: 1em;
+}
+
+.SpinnerIncrement, .SpinnerDecrement {
+  border: 1px solid;
+  border-left: none;
+  display: inline-block;
+  float: left;
+  width: 1em;
+  text-align: center;
+}
+
+.SpinnerNumber {
+  margin: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: calc(100% - 1em);
+}
+
+.SpinnerIncrement {
+  height: calc(.75em - 1px);
+}
+
+.SpinnerDecrement {
+  height: calc(.75em);
+  border-top: none;
+}
+
+.SpinnerUpArrow, .SpinnerDownArrow {
+  width: 0;
+  height: 0;
+  margin-top: 0.25em;
+  margin-left: 0.25em;
+}
+
+.SpinnerUpArrow {
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-bottom: 0.25em solid;
+}
+
+.SpinnerDownArrow {
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.25em solid;
+}
+
+.Spinner.disabled .SpinnerUpArrow {
+  border-bottom: 0.25em solid;
+}
+
+.Spinner.disabled .SpinnerDownArrow {
+  border-top: 0.25em solid;
+}
+
+.Spinner, .ComboEditable {
+  display: inline-block;
+}
+
+.SwitchContainer, .CheckContainer, .RadioContainer {
+  display: inline-block;
+}
+
+.Check:not(old),
+.Radio:not(old),
+.Switch:not(old) {
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  opacity: 0;
+}
+
+.Check:not(old) + label,
+.Radio:not(old) + label {
+  display: inline-block;
+  margin-left: -2em;
+  line-height: 1.5em;
+}
+
+.Check:not(old) + label .outer,
+.Radio:not(old) + label .outer {
+  display: inline-block;
+  width: 0.875em;
+  height: 0.875em;
+  margin: 0.25em 0.5em 0.25em 0.25em;
+  border: 0.0625em solid;
+  border-radius: 0.25em;
+  vertical-align: bottom;
+}
+
+.Radio:not(old) + label .outer {
+  border-radius: 1em;
+}
+
+.Check:not(old):checked + label .outer:before {
+  content: "✓";
+  display: block;
+  width: 1em;
+  font-size: 0.875em;
+  line-height: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.Radio:not(old):checked + label .inner {
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  margin: 0.125em;
+  border: 0.0625em solid;
+  border-radius: 1em;
+}
+
+.List {
+  display: inline-block;
+  padding: 0;
+  margin: 0.25em;
+  border: 1px solid;
+  overflow-y: auto;
+}
+
+.List.h-scroll {
+  overflow-x: auto;
+}
+
+.ListItem {
+  cursor: default;
+  padding: 0.175em 0.5em;
+}
+
+.Combo .arrow-container {
+  width: 1em;
+  display: inline-block;
+  float: right;
+}
+
+.Combo .arrow-up-container {
+  margin-top: 0.45em;
+}
+
+.Combo .arrow-up-container, .Combo .arrow-down-container {
+  display: inline-block;
+  float: left;
+  line-height: initial;
+  width: 1em;
+  margin-left: 0.5em;
+  height: 0.4em;
+}
+
+.Combo .arrow-up, .Combo .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 0.2em solid transparent;
+  border-right: 0.2em solid transparent;
+}
+
+.Combo .arrow-up {
+  border-bottom: 0.2em solid;
+}
+
+.Combo .arrow-down {
+  border-top: 0.2em solid;
+}
+
+.Combo.disabled .arrow-up {
+  border-bottom: 0.2em solid;
+}
+
+.Combo.disabled .arrow-down {
+  border-top: 0.2em solid;
+}
+
+.Combo {
+  text-align: left;
+}
+
+.ComboItemList {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid;
+  overflow: auto;
+  border-top: none;
+  z-index: 10000;
+}
+
+.ComboItemList.hidden {
+  display: none;
+}
+
+.ComboItemList:not(.hidden) {
+  z-index: 1;
+}
+
+.ComboItemList.overlayed {
+  border-top: 1px solid;
+  -webkit-box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75);
+}
+
+.ComboItem {
+  cursor: default;
+  padding: 0.175em 5px;
+}
+
+.ComboItem.selected {
+  display: none;
+}
+
+.ComboEditable .Text {
+  margin: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: calc(100% - 1em - 3px);
+}
+
+.ComboEditableButtonContainer {
+  margin-top: 0;
+  border-left: none;
+  display: inline-block;
+  float: right;
+}
+
+.ComboEditableButton {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  margin-left: 0;
+  height: 1.5em;
+}
+
+.Combo.listShown, .ComboEditable.listShown .Text {
+  border-bottom-left-radius: 0;
+}
+
+.Combo.listShown, .ComboEditable.listShown .ComboEditableButton {
+  border-bottom-right-radius: 0;
+}
+
+.ComboEditableArrowContainer {
+  display: inline-block;
+  margin-top: 0.75em;
+}
+
+.ComboEditableArrowContainer .down-arrow {
+  border-top: 0.25em solid;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+}
+
+.ComboEditable.disabled .ComboEditableArrowContainer .down-arrow {
+  border-top: 0.25em solid;
+}
+
+.Table {
+  border: 1px solid;
+  border-collapse: collapse;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.TableHeader, .TableRowValue {
+  cursor: default;
+  padding: 5px;
+}
+
+.TableHeader, .TableRow, .TableRowValue {
+  border: 1px solid;
+}
+
+.ColorPickerReplacer, .ColorPickerReplacer:hover, .ColorPickerReplacer.sp-disabled, .ColorPicker.sp-active {
+  border: 1px solid;
+}
+
+.ColorPickerReplacer {
+  margin: 0.25em;
+  height: calc(1.5em - 2px);
+  width: calc(1.75em - 2px);
+  border: 1px solid;
+  cursor: default;
+}
+.ColorPickerReplacer .sp-preview {
+  width: calc(1.25em - 4px);
+  height: calc(1em - 4px);
+  margin: 0.25em 0 0 0.25em;
+  border: 1px solid;
+}
+
+.ColorPickerReplacer.sp-disabled > sp-preview {
+  border: 1px solid;
+}
+
+.ColorPickerReplacer.sp-disabled, ColorPickerReplacer.sp-disabled:hover {
+  background: none;
+}
+
+.ColorPickerContainer {
+  border: 1px solid;
+}
+
+.sp-picker-container {
+  border-left: 1px solid;
+}
+
+.sp-palette-container {
+  border-right: 1px solid;
+}
+
+.sp-palette-disabled .sp-picker-container {
+  border-left: none;
+}
+
+.sp-input:focus {
+  border: 1px solid;
+}
+
+.TabFolder {
+  display: inline-block;
+}
+
+.TabContainer {
+  width: 100%;
+  display: inline-block;
+}
+
+.Tab {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid;
+  border-bottom: none;
+  cursor: default;
+}
+
+.Tab:not(:first-child) {
+  border-left: none;
+}
+
+.TabContentContainer {
+  width: calc(100% - 2px - 10px);
+  border: 1px solid;
+  padding: 5px;
+  overflow-y: auto;
+}
+
+.ProgressBar {
+  height: 1em;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.ProgressBarInner {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.ProgressBar:not(.full):not(.indeterminate) .ProgressBarInner {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ProgressBar.indeterminate {
+  overflow-x: hidden;
+}
+.ProgressBar.indeterminate .ProgressBarInner {
+  animation: IndeterminateProgress 1.25s linear 0s infinite alternate;
+}
+
+@keyframes IndeterminateProgress {
+  0% {
+    width: 20%;
+    margin-left: 0;
+  }
+  100% {
+    width: 20%;
+    margin-left: 80%;
+  }
+}
+
+/*# sourceMappingURL=laf-gtk.css.map */

@@ -1,0 +1,77 @@
+.Button, .ToggleButton, .FileChooser + label, .Combo, .ComboEditableButton
+  border-radius    : get($controlBorderRadius)
+  border           : $controlBorder
+  background       : get($controlBgGradient)
+  color            : inherit
+  font-family      : inherit
+  font-size        : inherit
+  padding-left     : 5px
+  padding-right    : 5px
+  line-height      : 1.5em
+  text-align       : center
+  display          : inline-block
+
+  .title
+    cursor: default
+
+  .title.invisible
+    opacity: 0
+
+.Button:focus, .ToggleButton:focus, .Combo:focus
+  outline: 0
+
+.Button:hover, .ToggleButton:not(.state-in):hover, .FileChooser + label:hover, .Combo:hover, .ComboEditableButton:hover
+  background: get($controlBgHoverGradient)
+
+.Button.disabled, .Button:hover.disabled,
+.ToggleButton.state-out.disabled, .ToggleButton.state-in.disabled,
+.ToggleButton.state-out.disabled:hover, .ToggleButton.state-in.disabled:hover,
+.Spinner.disabled .SpinnerIncrement, .Spinner.disabled .SpinnerIncrement:hover,
+.Spinner.disabled .SpinnerDecrement, .Spinner.disabled .SpinnerDecrement:hover,
+.FileChooser.disabled + label, .FileChooser.disabled + label:hover,
+.Combo.disabled, .Combo.disabled:hover,
+.ComboEditable.disabled .ComboEditableButton, .ComboEditable.disabled .ComboEditableButton:hover
+  color            : get($fgDisabled)
+  background       : none
+  background-color : get($controlBgDisabled)
+
+.ToggleButton.state-in, .Button:active, .ToggleButton:active, .FileChooser + label:active
+  background       : get($inBgGradient)
+
+.ToggleButton.state-in:hover
+  background: get($inBgHoverGradient)
+
+.ToggleButton.state-in.disabled, .ToggleButton.state-in.disabled:hover
+  background: get($inBgDisabledGradient)
+
+.ButtonGroup
+  margin  : $controlMargin
+  display : inline-block
+
+.ButtonGroup > .Button, .ButtonGroup > .ToggleButton
+  margin: 0
+
+.ButtonGroup > .Button:first-child, .ButtonGroup > .ToggleButton:first-child
+  border-top-right-radius: 0
+  border-bottom-right-radius: 0
+
+.ButtonGroup > .Button:last-child, .ButtonGroup > .ToggleButton:last-child
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+
+.ButtonGroup > .Button:not(:last-child):not(:first-child), .ButtonGroup > .ToggleButton:not(:last-child):not(:first-child)
+  border-radius: 0
+
+.ButtonGroup > .Button:not(:last-child), .ButtonGroup > .ToggleButton:not(:last-child)
+  border-right: none
+
+
+//Technically a FileChooser is Button, right?.. It just wants to be a special snowflake
+//This applies to the <input> element
+.FileChooser
+  width    : 0.1px
+  height   : 0.1px
+  opacity  : 0
+  overflow : hidden
+  position : absolute
+  z-index  : -1

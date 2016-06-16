@@ -1,0 +1,66 @@
+.SwitchContainer, .CheckContainer, .RadioContainer
+  display: inline-block
+
+.Check:not(old),
+.Radio:not(old),
+.Switch:not(old)
+  width     : 2em
+  margin    : 0
+  padding   : 0
+  font-size : 1em
+  opacity   : 0
+
+.CheckContainer.disabled label,
+.RadioContainer.disabled label
+  color: get($fgDisabled)
+
+.Check:not(old) + label,
+.Radio:not(old) + label
+  display      : inline-block
+  margin-left  : -2em
+  line-height  : 1.5em
+
+.Check:not(old) + label .outer,
+.Radio:not(old) + label .outer
+  display          : inline-block
+  width            : 0.875em
+  height           : 0.875em
+  margin           : 0.25em 0.5em 0.25em 0.25em
+  border           : 0.0625em solid get($controlBorderColor)
+  border-radius    : 0.25em
+  background-color : get($controlBg)
+  vertical-align   : bottom
+
+.Radio:not(old) + label .outer
+  border-radius    : 1em
+
+.Check:not(old):checked + label .outer,
+.Radio:not(old):checked + label .outer,
+.Check:not(old):hover + label .outer,
+.Radio:not(old):hover + label .outer
+  background-color: get($controlBgHover)
+
+.CheckContainer.disabled label .outer,
+.RadioContainer.disabled label .outer,
+.CheckContainer:hover.disabled label .outer,
+.RadioContainer:hover.disabled label .outer
+  background-color: get($controlBgDisabled)
+
+.Check:not(old):checked + label .outer:before
+  content     : "\2713"
+  display     : block
+  width       : 1em
+  color       : get($fg)
+  font-size   : 0.875em
+  line-height : 1em
+  text-align  : center
+  font-weight : bold
+
+.Radio:not(old):checked + label .inner
+  display          : block
+  width            : 0.5em
+  height           : 0.5em
+  margin           : 0.125em
+  border           : 0.0625em solid get($controlBorderColor)
+  border-radius    : 1em
+  background-color : get($fg)

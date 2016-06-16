@@ -1,0 +1,74 @@
+@function get($map)
+  @return map-get($map, $LAF)
+
+//mapped
+$bg                     : (def: #1A1A1A)
+$fg                     : (def: #CCC)
+$ph                     : (def: #AAA)
+$fgDisabled             : (def: #444)
+$controlBg              : (def: #222)
+$controlBgGradient      : (def: linear-gradient(#313131, #222))
+$controlBgAlt           : (def: #1A1A1A)
+$controlBgDisabled      : (def: #101010)
+$controlBgHover         : (def: #333)
+$controlBgHoverGradient : (def: linear-gradient(#414141, #333))
+$controlBorderColor     : (def: #000)
+$inBgGradient           : (def: linear-gradient(#181818, #282828))
+$inBgHoverGradient      : (def: linear-gradient(#282828, #383838))
+$inBgDisabledGradient   : (def: linear-gradient(#040404, #141414))
+$controlBorderRadius    : (def: 5px)
+
+//non-mapped
+$controlMargin                 : .25em
+$controlBorder                 : 1px solid get($controlBorderColor)
+
+html, body
+  padding          : 0
+  margin           : 0
+  color            : get($fg)
+  background-color : get($bg)
+  font-family      : 'Trebuchet MS'
+  //TODO: font-family specific to LAF
+
+.noselect
+  -webkit-touch-callout : none /* iOS Safari */
+  -webkit-user-select   : none /* Chrome/Safari/Opera */
+  -khtml-user-select    : none /* Konqueror */
+  -moz-user-select      : none /* Firefox */
+  -ms-user-select       : none /* IE/Edge */
+  user-select           : none /* non-prefixed version, currently not supported by any browser */
+
+//Spectrum styling
+
+//No need to see the down arrow
+.sp-dd
+  display: none
+
+.sp-preview
+  margin: 0
+
+.sp-replacer
+  padding: 0
+  
+//NOTE: resize classes will not work in IE
+.no-resize
+  resize: none
+
+.resize-v
+  resize: vertical
+
+.resize-h
+  resize: horizontal
+
+.resize-all
+  resize: both
+
+.Button, .ToggleButton,
+.Text, .TextArea, .Spinner,
+.CheckContainer, .RadioContainer,
+.ColorPicker, .FileChooser + label,
+.Combo, .ComboEditable,
+.Table,
+.TabFolder,
+.ProgressBar,
+  margin: $controlMargin

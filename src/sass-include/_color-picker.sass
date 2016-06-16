@@ -1,0 +1,43 @@
+.ColorPickerReplacer, .ColorPickerReplacer:hover, .ColorPickerReplacer.sp-disabled, .ColorPicker.sp-active
+  border: $controlBorder
+
+.ColorPickerReplacer
+  margin     : $controlMargin
+  height     : calc(1.5em - 2px)
+  width      : calc(1.75em - 2px)
+  background : get($controlBgGradient)
+  border     : $controlBorder
+  cursor     : default
+
+  .sp-preview
+    width  : calc(1.25em - 4px)
+    height : calc(1em - 4px)
+    margin : 0.25em 0 0 0.25em
+    border : 1px solid get($fg)
+
+.ColorPickerReplacer.sp-disabled > sp-preview
+  border: 1px solid get($fgDisabled)
+
+.ColorPickerReplacer:hover, .ColorPicker.sp-active, .sp-replacer.sp-active
+  background   : get($controlBgHoverGradient)
+  border-color : get($controlBorderColor)
+
+.ColorPickerReplacer.sp-disabled, ColorPickerReplacer.sp-disabled:hover
+  background       : none
+  background-color : get($controlBgDisabled)
+
+.ColorPickerContainer
+  background-color: get($bg)
+  border: $controlBorder
+
+.sp-picker-container
+  border-left: $controlBorder
+
+.sp-palette-container
+  border-right: $controlBorder
+
+.sp-palette-disabled .sp-picker-container
+  border-left: none
+
+.sp-input:focus
+  border: $controlBorder
