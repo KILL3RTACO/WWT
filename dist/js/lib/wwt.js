@@ -749,7 +749,7 @@
         }
         this.$__element.remove();
         this.__disposed = true;
-        return this.__notifyListeners(root.event.Dispose);
+        return this.notifyListeners(root.event.Dispose);
       };
 
       Widget.prototype.update = function() {};
