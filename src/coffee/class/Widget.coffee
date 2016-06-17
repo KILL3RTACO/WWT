@@ -134,7 +134,7 @@
       return if @__disposed or not @$__element
       @$__element.remove()
       @__disposed = true
-      @__notifyListeners root.event.Dispose
+      @notifyListeners root.event.Dispose
 
     # Subclasses should override
     update: ->
