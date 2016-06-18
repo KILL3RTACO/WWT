@@ -42,13 +42,13 @@
       throw new Error("className cannot have space") if className.indexOf(" ") > -1
       index = -1
       count = 0
-      for c in @__addedClasses
+      for c in @__classes
         if c is className
           index = count
           break
         count++
       if index > -1
-        @__addedClasses.splice index, 1
+        @__classes.splice index, 1
         @$__element.removeClass className
       return @
     removeClasses: (classes) ->
@@ -56,8 +56,8 @@
       (removeClass c if typeof c is "string") for c in classes
       return @
     clearClasses: ->
-      @$__element.removeClass @__addedClasses.join " "
-      @__addedClasses.splice 0, @__addedClasses.length
+      @$__element.removeClass @__classes.join " "
+      @__classes.splice 0, @__classes.length
       return @
     getClasses: -> @__classes.slice 0
     css: ->
