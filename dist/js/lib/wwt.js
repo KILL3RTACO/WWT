@@ -404,7 +404,7 @@
         }
         index = -1;
         count = 0;
-        ref = this.__addedClasses;
+        ref = this.__classes;
         for (j = 0, len = ref.length; j < len; j++) {
           c = ref[j];
           if (c === className) {
@@ -414,7 +414,7 @@
           count++;
         }
         if (index > -1) {
-          this.__addedClasses.splice(index, 1);
+          this.__classes.splice(index, 1);
           this.$__element.removeClass(className);
         }
         return this;
@@ -433,8 +433,8 @@
       };
 
       CssController.prototype.clearClasses = function() {
-        this.$__element.removeClass(this.__addedClasses.join(" "));
-        this.__addedClasses.splice(0, this.__addedClasses.length);
+        this.$__element.removeClass(this.__classes.join(" "));
+        this.__classes.splice(0, this.__classes.length);
         return this;
       };
 
