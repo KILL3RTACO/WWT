@@ -1,7 +1,6 @@
   root.EventListener = class EventListener
 
     addListener: (eventType, listener) ->
-      @__checkDisposeState()
       root.util.validateString "eventType", eventType
       root.util.validateFunction "listener", listener
       @__getListeners(eventType).push listener
@@ -29,7 +28,6 @@
       return list
 
     notifyListeners: (eventType, eventData) ->
-      @__checkDisposeState()
       root.util.validateString eventType, "string"
       listenerList = @__listeners[eventType]
       return if not root.util.isArray listenerList

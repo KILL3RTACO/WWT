@@ -458,7 +458,6 @@
       function EventListener() {}
 
       EventListener.prototype.addListener = function(eventType, listener) {
-        this.__checkDisposeState();
         root.util.validateString("eventType", eventType);
         root.util.validateFunction("listener", listener);
         this.__getListeners(eventType).push(listener);
@@ -514,7 +513,6 @@
 
       EventListener.prototype.notifyListeners = function(eventType, eventData) {
         var j, l, len, listenerList;
-        this.__checkDisposeState();
         root.util.validateString(eventType, "string");
         listenerList = this.__listeners[eventType];
         if (!root.util.isArray(listenerList)) {
@@ -748,8 +746,28 @@
           return;
         }
         this.$__element.remove();
-        this.__disposed = true;
-        return this.notifyListeners(root.event.Dispose);
+        this.notifyListeners(root.event.Dispose);
+        return this.__disposed = true;
+      };
+
+      Widget.prototype.addListener = function() {
+        this.__checkDisposeState();
+        return EventListener.prototype.addListener.apply(this, arguments);
+      };
+
+      Widget.prototype.removeListener = function() {
+        this.__checkDisposeState();
+        return EventListener.prototype.removeListener.apply(this, arguments);
+      };
+
+      Widget.prototype.removeAllListeners = function() {
+        this.__checkDisposeState();
+        return EventListener.prototype.removeAllListeners.apply(this, arguments);
+      };
+
+      Widget.prototype.notifyListeners = function() {
+        this.__checkDisposeState();
+        return EventListener.prototype.notifyListeners.apply(this, arguments);
       };
 
       Widget.prototype.update = function() {};

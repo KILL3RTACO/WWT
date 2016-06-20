@@ -133,8 +133,22 @@
     dispose: ->
       return if @__disposed or not @$__element
       @$__element.remove()
-      @__disposed = true
       @notifyListeners root.event.Dispose
+      @__disposed = true
+
+    addListener: ->
+      @__checkDisposeState()
+      EventListener.prototype.addListener.apply this, arguments
+    removeListener: ->
+      @__checkDisposeState()
+      EventListener.prototype.removeListener.apply this, arguments
+    removeAllListeners: ->
+      @__checkDisposeState()
+      EventListener.prototype.removeAllListeners.apply this, arguments
+    notifyListeners: ->
+      @__checkDisposeState()
+      EventListener.prototype.notifyListeners.apply this, arguments
+
 
     # Subclasses should override
     update: ->
