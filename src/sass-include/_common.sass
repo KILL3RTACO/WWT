@@ -26,9 +26,11 @@ html, body
   padding          : 0
   margin           : 0
   color            : get($fg)
-  background-color : get($bg)
   font-family      : 'Trebuchet MS'
   //TODO: font-family specific to LAF
+
+html, body, .Composite
+  background-color : get($bg)
 
 .noselect
   -webkit-touch-callout : none /* iOS Safari */
@@ -49,7 +51,7 @@ html, body
 
 .sp-replacer
   padding: 0
-  
+
 //NOTE: resize classes will not work in IE
 .no-resize
   resize: none
