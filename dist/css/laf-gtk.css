@@ -343,10 +343,6 @@ html, body {
   display: none;
 }
 
-.ComboItemList:not(.hidden) {
-  z-index: 1;
-}
-
 .ComboItemList.overlayed {
   border-top: 1px solid;
   -webkit-box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75);
