@@ -9,6 +9,7 @@
       root.util.validateString "text", text
       @__text = text
       @update() if update
+      return @
     getText: ->
       @__checkDisposeState()
       @__text

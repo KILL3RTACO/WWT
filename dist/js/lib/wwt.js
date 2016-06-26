@@ -940,8 +940,9 @@
         root.util.validateString("text", text);
         this.__text = text;
         if (update) {
-          return this.update();
+          this.update();
         }
+        return this;
       };
 
       Label.prototype.getText = function() {
